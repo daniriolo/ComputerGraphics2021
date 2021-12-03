@@ -86,20 +86,20 @@ void DDA (int x1, int y1, int x2, int y2){
     }
 
     if(abs(y2-y1) < abs(x2-x1)){
-        int itX = x1;
-        int itY = y1; 
-        for(; itX <= x2; itX++){
-            itY += ((y2-y1)/(x2-x1));                                           //Calculate the Y for each X using the past point
-            int Y = (int)itY;                                                   //and the new one was the slope 
-	    SetPixel(itX,Y);
+        int nX = x1;
+        int nY = y1; 
+        for(; nX <= x2; nX++){
+            nY += ((y2-y1)/(x2-x1));                                           //Calculate the Y for each X using the past point
+            int Y = (int)nY;                                                   //and the new one was the slope 
+	    SetPixel(nX,Y);
         }
     }else{
-        int itX = x1;
-        int itY = y1; 
-        for(; itY <= y2; itY++){
-            itX += ((x2-x1)/(y2-y1));                                           //Calculate the X for each Y using the past point
-            int X = (int)itX;                                                   //and the new one was the slope
-			SetPixel(X,itY);
+        int nX = x1;
+        int nY = y1; 
+        for(; nY <= y2; nY++){
+            nX += ((x2-x1)/(y2-y1));                                           //Calculate the X for each Y using the past point
+            int X = (int)nX;                                                   //and the new one was the slope
+	    SetPixel(X,nY);
         }
     }  
     
@@ -108,17 +108,17 @@ return;
 
 void Bresenham(int x1, int y1, int x2, int y2){                                
 
-    int slope = 2 * (y2-y1);                                                    //Calculate the possible update of slope to the E
-    int curr_slope = slope - (x2 - x1);                                         //Calculate the possible update of slope to the NE
-    int itX = x1; 
-    int itY = y1;
+    int slope = 2 * (y2-y1);                                                //Calculate the possible update of slope to the E
+    int nslope = slope - (x2 - x1);                                         //Calculate the possible update of slope to the NE
+    int nX = x1; 
+    int nY = y1;
 
-    for(; itX <= x2; itX++){
-		SetPixel(itX,itY);
-        curr_slope += slope;                                                    //Sum of both possible updates
-        if(curr_slope >= 0){                                                    //Cheack that it's greater than 0 
-            itY++;                                                              //that means that we move NE (it's Bresenham observation)
-            curr_slope -= 2 * (x2 - x1);                                    
+    for(; nX <= x2; nX++){
+	SetPixel(nX,nY);
+        nslope += slope;                                                    //Sum of both possible updates
+        if(nslope >= 0){                                                    //Check that it's greater than 0 
+            nY++;                                                              //that means that we move NE (it's Bresenham observation)
+            nslope -= 2 * (x2 - x1);                                    
         }
     }
 
