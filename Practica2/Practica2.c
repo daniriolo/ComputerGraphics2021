@@ -32,7 +32,7 @@ void drawImg(RGB matrix[N][N]){  //Function to write the matrix in a ppm file
 }
 
 void SetPixel(int x,int y){
-	matrix[x][y].red = 255;
+    matrix[x][y].red = 255;
     matrix[x][y].green = 255;
     matrix[x][y].blue = 255;
 }
@@ -81,7 +81,6 @@ void NaiveApproach (int x1, int y1, int x2, int y2){
 
 void DDA (int x1, int y1, int x2, int y2){
 
-
     if(abs(y2-y1) == abs(x2-x1)){                                               //Case when its equal
         SetPixel(x1,y1);
     }
@@ -92,7 +91,7 @@ void DDA (int x1, int y1, int x2, int y2){
         for(; itX <= x2; itX++){
             itY += ((y2-y1)/(x2-x1));                                           //Calculate the Y for each X using the past point
             int Y = (int)itY;                                                   //and the new one was the slope 
-			SetPixel(itX,Y)
+	    SetPixel(itX,Y);
         }
     }else{
         int itX = x1;
