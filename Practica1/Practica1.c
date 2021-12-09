@@ -1,9 +1,16 @@
-/* Serna Gonzalez Daniel*/
+/* 
+	Instituto Politecnico Nacional
+	Escuela Superior de Computo
+	3CV14
+	Serna Gonzalez Daniel
+ 	Program that receive as input two coordinates p1(x1,y1) y p2(x2,y2)
+	and gives as an output the coordinates that makes the line
+	from p1 to p2
+ */
+
 #include <stdio.h>
 #include <math.h>
-/*  Program that receive as input two coordinates (x1,y1) y (x2,y2)
-	and gives as an output an image with the line
- */
+
 int abs(int n){ //Absolute Value Function
 	return (n>0)? n:(n*(-1));
 }
