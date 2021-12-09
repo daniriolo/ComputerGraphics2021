@@ -1,5 +1,11 @@
-/* Serna Gonzalez Daniel 
-	Its not complete , i just wrote the algorithms to render , but i need to bring the algorithms to practical.
+/* 
+	Instituto Politecnico Nacional
+	Escuela Superior de Computo
+	Serna Gonzalez Daniel 
+	3CV15
+	
+	Its not complete , i just wrote the algorithms to render , 
+	but i need to bring the algorithms to practical.
 */
 #define N 1000
 #include <stdio.h>
@@ -127,5 +133,5 @@ return;
 
 
 int main(){
-	
+	return 0;
 }
